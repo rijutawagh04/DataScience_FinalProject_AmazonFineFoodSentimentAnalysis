@@ -1,0 +1,28 @@
+﻿<div class="jumbotron">
+
+    @{
+        ViewBag.Title = "GetData";
+    }
+
+
+    @model WebApplication8.Models.Input
+    @using (Html.BeginForm("GetData", "Home", FormMethod.Post))
+    {
+        <div>
+            @Html.TextBoxFor(model => model.productID)
+            @Html.TextBoxFor(model => model.data)
+            <input type="submit" id="submitId" value="submit" onclick="location.href='@Url.Action("GetData", "Home")'" />
+        </div>
+        <br />
+        <div>
+            @Html.Label("Score Labels")
+            @Html.DisplayFor(model => Model.SL)
+            @Html.Label("Score Probability")
+            @Html.DisplayFor(model => Model.SP)
+        </div>
+        <div >
+
+            <img src="~/resources/happy.gif" style="height:200px;width:200px;" />
+        </div>
+    }
+</div>
