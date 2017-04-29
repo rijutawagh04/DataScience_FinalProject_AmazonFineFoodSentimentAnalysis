@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h2>AMAZON FOOD REVIEWS - Sentiment Analysis</h2>
+    <p >Please enter the Product ID and text</p>
+   
+@model WebApplication8.Models.Input
+@using (Html.BeginForm("GetData", "Home", FormMethod.Post))
+{
+    <div>
+        Product ID :  @Html.TextBoxFor(model => model.productID)
+        Text : @Html.TextBoxFor(model => model.data)
+        <input type="submit" id="submitId" value="submit" onclick="location.href='@Url.Action("GetData", "Home")'" />
+    </div>
+}
+
+</div>
+
